@@ -62,6 +62,7 @@ include ('../config/function.php');
                 <th>KATEGORI</th>
                 <th>KETERANGAN</th>
                 <th>JUMLAH</th>
+                <th>PROFIT</th>
             </tr>
             <?php $n=1; while($row = mysqli_fetch_array($query)): ?>
             <tr>
@@ -72,8 +73,16 @@ include ('../config/function.php');
                 <td><?= $row['nama_kategori']; ?></td>
                 <td><?= $row['keterangan']; ?></td>
                 <td><?= $row['jumlah']; ?></td>
+                <td><?=$row['profit'] ?></td>
+                <?php $totalprofit =+ $row['profit'] ?>
             </tr>
             <?php endwhile; ?>
+            <tr>
+                <td colspan="7" align="right">TOTAL PROFIT :</td>
+                <td>
+                    <?= $totalprofit ?>
+                </td>
+            </tr>
         </table>
     </div>
 </body>
