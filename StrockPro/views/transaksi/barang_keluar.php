@@ -35,6 +35,7 @@
                             <th>KATEGORI</th>
                             <th>KETERANGAN</th>
                             <th>JUMLAH</th>
+                            <th>PROFIT</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,7 @@
                             <td><?= $row['nama_kategori']; ?></td>
                             <td><?= $row['keterangan']; ?></td>
                             <td><?= $row['jumlah']; ?></td>
+                            <td><?= $row['profit']; ?></td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>

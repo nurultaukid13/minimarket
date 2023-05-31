@@ -2,13 +2,7 @@
 <script>
 function submit(x) {
     if (x == 'add') {
-        $('[name="nama_barang"]').val("");
-        $('[name="merek_id"]').val("").trigger('change');
-        $('[name="kategori_id"]').val("").trigger('change');
-        $('[name="keterangan"]').val("");
-        $('#barangModal .modal-title').html('Tambah Barang');
-        $('[name="ubah"]').hide();
-        $('[name="tambah"]').show();
+        // ...
     } else {
         $('#barangModal .modal-title').html('Edit Barang');
         $('[name="tambah"]').hide();
@@ -27,6 +21,8 @@ function submit(x) {
                 $('[name="kategori_id"]').val(data.kategori_id).trigger('change');
                 $('[name="nama_barang"]').val(data.nama_barang);
                 $('[name="keterangan"]').val(data.keterangan);
+                $('[name="harga_jual"]').val(data.harga_jual); // tambahkan baris ini
+                $('[name="harga_restock"]').val(data.harga_restock); // tambahkan baris ini
             }
         });
     }
@@ -60,6 +56,8 @@ function submit(x) {
                             <th>MEREK</th>
                             <th>KATEGORI</th>
                             <th>KETERANGAN</th>
+                            <th>HARGA JUAL</th> <!-- Tambah kolom HARGA JUAL -->
+                            <th>HARGA RESTOCK</th> <!-- Tambah kolom HARGA RESTOCK -->
                             <th>STOK</th>
                             <th width="50">AKSI</th>
                         </tr>
@@ -76,6 +74,8 @@ function submit(x) {
                             <td><?= $row['nama_merek']; ?></td>
                             <td><?= $row['nama_kategori']; ?></td>
                             <td><?= $row['keterangan']; ?></td>
+                            <td><?= $row['harga_jual']; ?></td> <!-- Tambah kolom HARGA JUAL -->
+                            <td><?= $row['harga_restock']; ?></td> <!-- Tambah kolom HARGA RESTOCK -->
                             <td><?= $row['stok']; ?></td>
                             <td>
                                 <a href="#barangModal" data-toggle="modal" onclick="submit(<?=$row['idbarang'];?>)"
@@ -92,6 +92,7 @@ function submit(x) {
     </div>
 
 </div>
+
 <!-- /.container-fluid -->
 
 <!-- Modal Tambah barang -->
@@ -133,6 +134,18 @@ function submit(x) {
                                     <option value="">-- Pilih Kategori --</option>
                                     <?= list_kategori(); ?>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="harga_jual">Harga Jual <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="harga_jual" name="harga_jual" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="harga_restock">Harga Restock <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="harga_restock" name="harga_restock" required>
                             </div>
                         </div>
                         <div class="col-md-12">
