@@ -42,7 +42,7 @@ if(isset($_POST['cek_login'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inventaris Sekolah</title>
+    <title>Stock Pro</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?=$base_url;?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@ if(isset($_POST['cek_login'])){
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?=$base_url;?>assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?=$base_url;?>assets/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -65,12 +65,12 @@ if(isset($_POST['cek_login'])){
             <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
+                    <div class="card-body p-2">
+                        <div class="text-md-right">
+                        <img src="<?=$base_url;?>assets/img/logostockpro.png" width="200">
+                        </div>
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-5 d-none d-lg-block text-center">
-                                <img src="<?=$base_url;?>assets/img/login.png" width="420" height="400">
-                            </div>
                             <div class="col-lg-7">
                                 <div class="p-5">
                                     <?php if(isset($_SESSION['success'])):?>
@@ -80,7 +80,9 @@ if(isset($_POST['cek_login'])){
                                     <div class="flash-data-gagal" data-gagal="<?= $_SESSION['error']; ?>"></div>
                                     <?php endif; unset($_SESSION['error']);?>
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
+                                        <hr style=" border-top: 5px solid #b3c99c; width: 80%; margin: 10px auto;">
+                                        <h1 class="h6 text-gray-900 mb-5" >Take Control Of Your Stocks</h1>
                                     </div>
                                     <form class="user" method="post" action="">
                                         <div class="form-group">
@@ -97,6 +99,9 @@ if(isset($_POST['cek_login'])){
                                     </form>
                                     <hr>
                                 </div>
+                            </div>
+                            <div class="d-lg-block pt-lg-5 col-lg-5">
+                                <img src="<?=$base_url;?>assets/img/login1.png" width="300">
                             </div>
                         </div>
                     </div>

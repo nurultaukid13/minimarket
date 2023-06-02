@@ -81,11 +81,13 @@ function submit(x) {
                             <td><?= $row['no_hp']; ?></td>
                             <td><?= $row['username']; ?></td>
                             <td>
+                                <?php if($row['username'] != 'admin'): ?>
                                 <a href="#penggunaModal" data-toggle="modal" onclick="submit(<?=$row['id_users'];?>)"
                                     class="btn btn-sm btn-circle btn-info"><i class="fas fa-edit"></i></a>
                                 <a href="<?=base_url();?>/process/users.php?act=<?=encrypt('delete');?>&id=<?=encrypt($row['id_users']);?>"
                                     class="btn btn-sm btn-circle btn-danger btn-hapus"><i class="fas fa-trash"></i></a>
                             </td>
+                            <?php endif;?>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>

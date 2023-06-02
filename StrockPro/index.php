@@ -16,7 +16,7 @@ else:
         <?php include "config/sidebar.php"; ?>
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color: #c9d1c0">
 
             <!-- Main Content -->
             <div id="content">
@@ -33,10 +33,10 @@ else:
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer" style="background-color: #f3f8ee">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Inventari Sekolah <?= date('Y'); ?></span>
+                        <span>Take Control Of Your Stocks</span>
                     </div>
                 </div>
             </footer>
