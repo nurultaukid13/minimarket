@@ -46,7 +46,7 @@ include ('../config/function.php');
     $query = mysqli_query($con,"SELECT x.*,x1.nama_merek,x2.nama_kategori FROM barang x JOIN merek x1 ON x1.idmerek=x.merek_id JOIN kategori x2 ON x2.idkategori=x.kategori_id ORDER BY x.idbarang DESC")or die(mysqli_error($con));
     
     ?>
-    <div style="page-break-after:always; text-align:center; margin-top:5%;">
+    <div style="page-break-after:always;text-align:center;margin-top:5%;">
         <div style="line-height:5px;">
             <h2>LAPORAN STOK BARANG</h2>
         </div>
