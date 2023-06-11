@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 31, 2023 at 08:15 AM
+-- Generation Time: Jun 11, 2023 at 01:27 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -46,8 +46,8 @@ INSERT INTO `barang` (`idbarang`, `merek_id`, `kategori_id`, `nama_barang`, `ket
 (1, 2, 1, 'Printer', 'Printer Canon Baru', 2, 0, 0),
 (3, 1, 1, 'Printer', 'Printer Epson', 2, 0, 0),
 (4, 2, 2, 'Spidol', ' ', 10, 0, 0),
-(5, 7, 4, 'Mie Goreng', 'Indomie Goreng', 20, 3000, 2500),
-(6, 8, 4, 'Mie Soto', 'Mie Sedap Soto\r\n', 0, 3000, 2500);
+(5, 7, 4, 'Mie Goreng', 'Indomie Goreng', 4, 3000, 2500),
+(6, 8, 4, 'Mie Soto', 'Mie Sedap Soto\r\n', 8, 3000, 2500);
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,10 @@ CREATE TABLE `barang_keluar` (
 --
 
 INSERT INTO `barang_keluar` (`idbarang_keluar`, `barang_id`, `jumlah`, `profit`, `keterangan`, `tanggal`) VALUES
-(1, 1, 1, 0, 'Rusak', '2020-11-26');
+(1, 1, 1, 0, 'Rusak', '2020-11-26'),
+(2, 6, 2, 1000, 'Terjual', '2023-05-31'),
+(3, 5, 12, 6000, 'Terjual', '2023-05-31'),
+(4, 5, 4, 2000, 'Terjual', '2023-06-09');
 
 --
 -- Triggers `barang_keluar`
@@ -103,7 +106,8 @@ INSERT INTO `barang_masuk` (`idbarang_masuk`, `barang_id`, `jumlah`, `keterangan
 (1, 4, 10, 'Beli Baru', '2020-11-24'),
 (2, 1, 3, 'Beli baru', '2020-11-23'),
 (3, 3, 2, 'Beli baru', '2020-11-24'),
-(4, 5, 20, 'baru', '2023-05-18');
+(4, 5, 20, 'baru', '2023-05-18'),
+(5, 6, 10, 'Restock baru', '2023-05-31');
 
 --
 -- Triggers `barang_masuk`
@@ -132,7 +136,6 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`idkategori`, `nama_kategori`, `keterangan`) VALUES
-(1, 'Elektronik', 'Barang Elektronik'),
 (2, 'Alat Tulis', 'seperti Pena, Pensil'),
 (4, 'Mie instan', 'mie');
 
@@ -153,8 +156,6 @@ CREATE TABLE `merek` (
 --
 
 INSERT INTO `merek` (`idmerek`, `nama_merek`, `keterangan`) VALUES
-(1, 'Epson', 'Printer Epson'),
-(2, 'Canon', 'Printer canon'),
 (7, 'Indomie', 'mie\r\n'),
 (8, 'Sedap', 'mie\r\n');
 
@@ -178,8 +179,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `nama`, `no_hp`, `username`, `password`, `level`) VALUES
-(3, 'Administrator', '082248577297', 'admin', '$2y$10$E33mbIeZc665JZiGOIwCMunuLcI.YnlIzMvGoqgPWflEykvFGFTAK', 'admin'),
-(13, 'diaz prisel', '098983123', 'diazp', '$2y$10$XZtFvc6BEaXlBmAi0etoYebnpW9g/kQ4znFnYIHTT4kRc5L/qq2ou', 'admin');
+(3, 'Administrator', '082248577297', 'admin', '$2y$10$E33mbIeZc665JZiGOIwCMunuLcI.YnlIzMvGoqgPWflEykvFGFTAK', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -235,13 +235,13 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  MODIFY `idbarang_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idbarang_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  MODIFY `idbarang_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idbarang_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kategori`
