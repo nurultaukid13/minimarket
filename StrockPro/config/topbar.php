@@ -12,7 +12,7 @@
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <li class="nav-item">
-            <img src="<?= $base_url; ?>assets/img/logostockpro.png" height="80">
+            <img src="assets/img/logostockpro.png" height="70" width="">
         </li>
 
     </ul>
