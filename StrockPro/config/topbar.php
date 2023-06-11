@@ -12,7 +12,7 @@
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <li class="nav-item">
-            <img src="assets/img/logostockpro.png" height="70" width="">
+            <img src="assets/img/logostockpro.png" height="70">
         </li>
 
     </ul>
