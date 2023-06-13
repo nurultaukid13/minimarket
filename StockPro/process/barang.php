@@ -14,9 +14,9 @@ if(isset($_POST['tambah'])){
 
     $insert = mysqli_query($con,"INSERT INTO barang (merek_id, kategori_id, nama_barang, keterangan, stok, harga_jual, harga_restock) VALUES ('$merek_id','$kategori_id','$nama_barang','$keterangan','$stok','$harga_jual','$harga_restock')") or die (mysqli_error($con));
     if($insert){
-        $success = 'Berhasil menambahkan data barang';
+        $success = 'berhasil menambahkan data barang';
     }else{
-        $error = 'Gagal menambahkan data barang';
+        $error = 'gagal menambahkan data barang';
     }
     $_SESSION['success'] = $success;
     $_SESSION['error'] = $error;
@@ -35,9 +35,9 @@ if(isset($_POST['ubah'])){
     $update = mysqli_query($con,"UPDATE barang SET merek_id='$merek_id', kategori_id='$kategori_id', nama_barang='$nama_barang', keterangan='$keterangan', harga_jual='$harga_jual', harga_restock='$harga_restock' WHERE idbarang='$id'") or die (mysqli_error($con));
     
     if($update){
-        $success = 'Berhasil mengubah data barang';
+        $success = 'berhasil mengubah data barang';
     }else{
-        $error = 'Gagal mengubah data barang';
+        $error = 'gagal mengubah data barang';
     }
     $_SESSION['success'] = $success;
     $_SESSION['error'] = $error;
